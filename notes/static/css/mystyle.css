@@ -1,0 +1,57 @@
+
+.nav-link{color:black}
+.nav-link:hover{
+    color:rgb(255, 255, 255);
+    font-weight:bold;
+    background-color:rgb(0, 184, 15);
+    border-radius: 60px;
+    opacity:0.9;
+}
+
+
+.transparentbox{
+    width:100%;
+    height:470px;
+    background-color: rgb(0, 0, 0);
+    border:1px solid #303030;
+    opacity:0.6;
+}
+
+.transparentbox p{
+    margin-top:10%;
+    font-weight:bold;
+    font-size:60px;
+    color: rgb(255, 255, 255);
+    font-family:'Consolas';
+    text-align:center
+}
+
+body{
+    background-color: #000000;
+}
+
+.halfcircle{
+    height:75px;
+    width:150px;
+    border-radius : 90px 90px 0 0;
+    margin:0px;
+    background-color:rgb(255, 255, 255);
+    opacity:0.5;
+}
+.halfcircleBottom{
+    height:75px;
+    width:150px;
+    border-radius : 0 0 90px 90px;
+    margin:0px;
+    background-color:rgb(0, 187, 31);
+    opacity:0.8;
+}
+.box1 p{
+    font-weight:bold;
+    color: rgb(0, 0, 0);
+    font-family:'Consolas';
+    text-align:center
+}
+.halfcircleBottom:hover{
+    background-color:rgb(0, 255, 21);
+}

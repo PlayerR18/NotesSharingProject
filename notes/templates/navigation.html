@@ -1,0 +1,41 @@
+
+<html lang="en">
+<head>
+{% load static %}
+  <title>Notes Sharing site</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/mystyle.css'%}">
+  </head>
+
+<body>
+<h4 style="padding : 1%"><span style="color:rgb(7, 201, 23)">Share</span><span style="color:lightgrey">Notes</span></h4>
+<nav class="navbar navbar-expand-sm" style ="background-color: lightgrey">
+<ul class="navbar-nav">
+<li class="navbar-item">
+<a class="nav-link" href="{%url 'index'%}">HOME</a>
+</li>
+<li class="navbar-item">
+<a class="nav-link" href="{%url 'about'%}">ABOUT</a>
+</li>
+<li class="navbar-item">
+<a class="nav-link" href="{%url 'index'%}">CONTACT</a>
+</li>
+<li class="navbar-item">
+<a class="nav-link" href="{%url 'index'%}">LOGIN</a>
+</li>
+<li class="navbar-item">
+<a class="nav-link" href="#">ADMIN LOGIN</a>
+</li>
+</ul>
+</nav>
+</body>
+</html>
+{% block body %}
+{% endblock %}
