@@ -20,5 +20,6 @@ from notes.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about',about,name='about'),
+    path('contact',contact,name='contact'),
     path('',index,name='index')
 ]
