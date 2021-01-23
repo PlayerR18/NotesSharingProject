@@ -46,4 +46,8 @@ def signup(request):
 def admin_home(request):
     if not request.user.is_staff:
         return redirect('admin1.html')
+<<<<<<< HEAD
     return render(request, 'admin_home.html')
+=======
+    return render(request,'admin_home.html')
+>>>>>>> 4b6471834b74f3f5e013d6eb4fd81b14db33c09d
