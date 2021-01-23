@@ -1,12 +1,6 @@
 
-.nav-link{color:black}
-.nav-link:hover{
-    color:rgb(255, 255, 255);
-    font-weight:bold;
-    background-color:rgb(0, 184, 15);
-    border-radius: 60px;
-    opacity:0.9;
-}
+.nav-link{color:white}
+
 
 
 .transparentbox{
@@ -27,7 +21,7 @@
 }
 
 body{
-    background-color: #000000;
+    background-image: linear-gradient( rgb(0, 0, 0) , rgb(36, 36, 36));
 }
 
 .halfcircle{
