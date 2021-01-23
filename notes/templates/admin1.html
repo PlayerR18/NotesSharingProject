@@ -4,7 +4,7 @@
 {% ifequal error "no" %}
 <script>
   alert('Logged in successfully');
-  window.location=('{% url 'admin_home' %}')
+  window.location=('{% url 'admin_home' %}');
 </script>
 {% endifequal %}
 {% ifequal error "yes" %}
