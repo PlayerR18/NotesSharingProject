@@ -28,7 +28,6 @@ def admin1(request):
                 error="yes"
     d={'error': error}
     return render(request,'admin1.html')
-    
 def signup(request):
     return render(request,'signup.html')
 def admin_home(request):
