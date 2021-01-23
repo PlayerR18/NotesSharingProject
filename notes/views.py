@@ -10,9 +10,9 @@ def index(request):
     return render(request,'index.html')
 def contact(request):
     return render(request,'contact.html')
-def login1(request):
-    return render(request,'login1.html')
-def admin1(request):
+def userlogin(request):
+    return render(request,'login.html')
+def login_admin(request):
     error=""
     if request.method=='POST':
         u=request.POST['uname']
@@ -27,10 +27,10 @@ def admin1(request):
         except:
                 error="yes"
     d={'error': error}
-    return render(request,'admin1.html')
+    return render(request,'login_admin.html')
 def signup(request):
     return render(request,'signup.html')
 def admin_home(request):
     if not request.user.is_staff:
-        return redirect('admin1.html')
+        return redirect('login_admin')
     return render(request,'admin_home.html')
