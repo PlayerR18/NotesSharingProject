@@ -1,0 +1,94 @@
+{% extends 'navigation.html'%}
+{% block body %}
+{% load static %}
+<div class="transparent">
+<div class="imag">
+    <style> 
+        input[type="text"] {
+        
+            border: 3px solid #ccc;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+            opacity:0.5;
+          }
+          
+          input[type="text"]:focus {
+            border: 4px solid rgb(7, 221, 0);
+            opacity:1;
+          }
+        input[type="email"] {
+        
+          border: 3px solid #ccc;
+          -webkit-transition: 0.3s;
+          transition: 0.3s;
+          opacity:0.5;
+        }
+        
+        input[type="email"]:focus {
+          border: 4px solid rgb(7, 221, 0);
+          opacity:1;
+        }
+          input[type="password"] {
+            border: 3px solid #ccc;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+            opacity:0.5;
+          }
+          
+          input[type=password]:focus {
+            border: 4px solid rgb(7, 221, 0);
+            opacity:1;
+        }
+        select{
+            border: 3px solid #ccc;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+            opacity:0.5;
+          }
+          
+          select:focus {
+            border: 4px solid rgb(7, 221, 0);
+            opacity:1;
+        }
+        </style>
+<div class="container ">
+<div class="row">
+<div class="col-3">
+</div>
+    <div class="col-6">
+    <br>
+    <h2 class=" text-white text-center">Sign Up</h2>
+    <HR style="background-color:white">
+        <form method="post">
+            {% csrf_token %}
+            <label class=" text-white">what's your First Name?</label>
+            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Enter your First Name" name="name"><br>
+            <label class=" text-white">what's your Last Name?</label>
+            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Enter your Last Name" name="name"><br>
+            <label class=" text-white">what's your E-mail?</label>
+            <input type="email" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Enter your Email-id" name="emailid"><br>
+            <label class=" text-white" >Create your Password</label>
+            <input type="password" class="form-control" style="border: 2px solid green;border-radius:80px" placeholder="Enter your Password" name="password"><br>
+            <label class=" text-white">what's your branch?</label>
+            <select class="form-control"  style="border: 2px solid green;border-radius:80px" name="branch">
+                <option value="" disabled selected>Select your branch</option>
+                <option value="BCA">BCA</option>
+                <option value="BBA">BBA</option>
+                <option value="B.com">B.Com</option>
+            </select>
+            <br>
+            <label class=" text-white">Are you a...</label><br>
+            <input class=" text-white" type="radio" id="male" name="gender" value="male">
+            <label class=" text-white" style="margin-right: 30px;font-size:18" for="male">Student</label>
+            <input class=" text-white" type="radio" id="female" name="gender" value="female">
+            <label class=" text-white"  style="margin-right: 30px;font-size:18" for="female">Teacher</label><br>
+            <input type="submit" class="btn btn-success text-white mt-5" style="border: 2px solid rgb(255, 255, 255);border-radius:80px; width:100%" value="Sign Up"> <br>
+            <a href="{%url 'login1'%}" class="btn text-black mt-5" style="border: 2px solid rgb(20, 170, 0);border-radius:80px; ; width:100%" ><span style="color:white">Already an Existing user? </span><span style="color:rgb(7, 201, 23)">Log In</span></a>
+            </form>
+
+        
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

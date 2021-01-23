@@ -13,25 +13,42 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{% static 'css/mystyle.css'%}">
   </head>
+<style>
+  
+.nav-link{color:white
+}
+.nav-link:hover{
+    color:rgb(30, 255, 0);
+    background-color:rgb(0, 0, 0);
+    border-radius: 60px;
+    opacity:0.9;
+    transition: 0.3s;
+}
 
+
+</style>
 <body>
-<h4 style="padding : 1%"><span style="color:rgb(7, 201, 23)">Share</span><span style="color:lightgrey">Notes</span></h4>
-<nav class="navbar navbar-expand-sm" style ="background-color: lightgrey">
+<nav class="navbar navbar-expand-sm justify-content-end" style ="background-color: rgb(0, 0, 0)">
 <ul class="navbar-nav">
+  <h3 class="text-left justify-content-start" style="margin-right: 650px ;text-align: justify"><span style="color:white">Share</span><span style="color:rgb(7, 201, 23)">Note</span></h4>
 <li class="navbar-item">
-<a class="nav-link" href="{%url 'index'%}">HOME</a>
+  
+<a class="nav-link" style="margin-right: 50px;" href="{%url 'index'%}">Home</a>
 </li>
 <li class="navbar-item">
-<a class="nav-link" href="{%url 'about'%}">ABOUT</a>
+<a class="nav-link" style="margin-right: 50px;" href="{%url 'about'%}">About</a>
 </li>
 <li class="navbar-item">
-<a class="nav-link" href="{%url 'contact'%}">CONTACT</a>
+<a class="nav-link" style="margin-right: 50px;" href="{%url 'contact'%}">Contact</a>
 </li>
 <li class="navbar-item">
-<a class="nav-link" href="{%url 'index'%}">LOGIN</a>
+<a class="nav-link" style="margin-right: 50px;" href="{%url 'login1'%}">Login</a>
 </li>
 <li class="navbar-item">
-<a class="nav-link" href="#">ADMIN LOGIN</a>
+  <a class="nav-link" style="margin-right: 50px;" href="{%url 'signup'%}">SignUp</a>
+  </li>
+<li class="navbar-item" style="margin-right: 50px;">
+<a class="nav-link"  href="{%url 'admin1'%}">Admin</a>
 </li>
 </ul>
 </nav>
