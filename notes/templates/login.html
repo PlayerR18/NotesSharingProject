@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% extends 'navigation.html'%}
 {% block body %}
 {% load static %}
@@ -35,7 +36,7 @@
     <div class="col-sm-4">
     <br>
     <h2 class=" text-white">Login</h2>
-    <HR style="background-color:white">
+    <hr style="background-color:white">
         <form method="post">
             {% csrf_token %}
             <label class=" text-white">E-mail Address</label>
@@ -47,6 +48,7 @@
             <a href="{%url 'login_admin'%}" class="btn text-black mt-5" style="border: 2px solid rgb(20, 170, 0);border-radius:80px; ; width:100%" ><span style="color:white">Login as an </span><span style="color:rgb(7, 201, 23)">Administrator</span></a>
           </form>  
     </div>
+</div>
 </div>
 </div>
 </div>
