@@ -25,5 +25,6 @@ urlpatterns = [
     path('login_admin',login_admin,name='login_admin'),
     path('signup',signup,name='signup'),
     path('admin_home',admin_home,name='admin_home'),
+    path('logout',Logout,name='logout'),
     path('',index,name='index')
 ]

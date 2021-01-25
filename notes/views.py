@@ -12,9 +12,10 @@ def contact(request):
     return render(request,'contact.html')
 def userlogin(request):
     return render(request,'login.html')
+
 def login_admin(request):
-    error=""
-    if request.method=='POST':
+    error= ""
+    if request.method == 'POST':
         u=request.POST['uname']
         p=request.POST['pwd']
         user=authenticate(username=u, password=p)
@@ -26,11 +27,17 @@ def login_admin(request):
                 error="yes"
         except:
                 error="yes"
-    d={'error': error}
-    return render(request,'login_admin.html')
+    d = {'error': error}
+    return render(request,'login_admin.html',d)
+
 def signup(request):
     return render(request,'signup.html')
+
 def admin_home(request):
     if not request.user.is_staff:
         return redirect('login_admin')
     return render(request,'admin_home.html')
+
+def Logout(request):
+    logout(request)
+    return redirect('index')

@@ -1,2 +1,55 @@
-<!DOCTYPE html>
-# admin home
+{% extends 'admin_nav.html'%}
+{% block body %}
+{% load static %}
+<style>
+    .container1
+    {
+        background-color:rgb(244, 184, 250);
+        border-radius: 10px;
+        opacity: 0.5;
+    }
+    .container1:hover
+    {
+        background-color:rgb(9, 155, 148);
+        border-radius: 10px;
+        opacity: 1;
+        transition: 0.6s;
+    }
+    .mydiv:hover{
+        transform:translateY(-15px);
+        transition: 0.4s;
+    }
+    h1,h2,h4{padding:25px}
+</style>
+<br>
+<h1 class="text-white text-center"><span style="color:rgb(0, 255, 98); font-family:'Consolas'; font-weight:bold; font-size:70;">Welcome </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:50;">to </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;">Share</span><span style="color:rgb(0, 255, 98); font-weight:bold; font-family:'Consolas'; font-size:70;">Note</span> <span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;">!</span></h1>
+<br>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-white">5</h2>
+                <a href="#"><h4><span style="color:rgb(255, 255, 255)"> Pending</span><span style="color:rgb(0, 0, 0)"> Notes</h4></a>
+            </div>
+            </div>
+            <div class="col-sm-3 text-center mydiv">
+                <div class="container1">
+                    <h2 class="text-white">5</h2>
+                    <a href="#"><h4><span style="color:rgb(255, 255, 255)">Accepted</span><span style="color:rgb(0, 0, 0)"> Notes</h4></a>
+                </div>
+                </div>
+                <div class="col-sm-3 text-center mydiv">
+                    <div class="container1">
+                        <h2 class="text-white">5</h2>
+                        <a href="#"><h4><span style="color:rgb(255, 255, 255)">Rejected</span><span style="color:rgb(0, 0, 0)"> Notes</h4></a>
+                    </div>
+                    </div>
+                    <div class="col-sm-3 text-center mydiv">
+                        <div class="container1">
+                            <h2 class="text-white">5</h2>
+                            <a href="#"><h4><span style="color:rgb(255, 255, 255)">All</span><span style="color:rgb(0, 0, 0)"> Notes</h4></a>
+                        </div>
+                        </div>>
+    </div>
+</div>
+{% endblock %}
