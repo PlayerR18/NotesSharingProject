@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% extends 'navigation.html'%}
 {% load static %}
 {% block body %}
@@ -45,7 +46,7 @@
     <div class="col-sm-4">
     <br>
     <h2 class=" text-white">Admin Login</h2>
-    <HR style="background-color:white">
+    <hr style="background-color:white">
         <form method="post">
             {% csrf_token %}
             <label class=" text-white">User Name</label>
