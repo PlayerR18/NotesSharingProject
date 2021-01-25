@@ -62,33 +62,44 @@
         <form method="post">
             {% csrf_token %}
             <label class=" text-white">First Name</label>
-            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Lester" name="name"><br>
+            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Lester" name="firstname"><br>
             <label class=" text-white">Last Name</label>
-            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Crest" name="name"><br>
+            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Crest" name="lastname"><br>
             <label class=" text-white">E-mail</label>
-            <input type="email" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="lestercrest@email.com" name="emailid"><br>
+            <input type="email" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="lestercrest@email.com" name="email"><br>
             <label class=" text-white" >Password</label>
             <input type="password" class="form-control" style="border: 2px solid green;border-radius:80px" placeholder="********" name="password"><br>
             <label class=" text-white">Branch?</label>
-            <select class="form-control"  style="border: 2px solid green;border-radius:80px" name="Branch">
+            <select class="form-control"  style="border: 2px solid green;border-radius:80px" name="branch">
                 <option value="" disabled selected>Select your branch</option>
                 <option value="BCA">BCA</option>
                 <option value="BBA">BBA</option>
                 <option value="B.com">B.Com</option>
             </select>
             <br>
-            <label class=" text-white">Select one</label><br>
-            <input class=" text-white" type="radio" id="male" name="gender" value="male">
-            <label class=" text-white" style="margin-right: 30px;font-size:18" for="male">Student</label>
-            <input class=" text-white" type="radio" id="female" name="gender" value="female">
-            <label class=" text-white"  style="margin-right: 30px;font-size:18" for="female">Teacher</label><br>
+            <label class=" text-white">Role</label>
+            <select class="form-control"  style="border: 2px solid green;border-radius:80px" name="role">
+                <option value="" disabled selected>Select your role</option>
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+            </select>
+            <br>
             <input type="submit" class="btn btn-success text-white mt-5" style="border: 2px solid rgb(255, 255, 255);border-radius:80px; width:100%" value="Sign Up"> <br>
             <a href="{%url 'login'%}" class="btn text-black mt-5" style="border: 2px solid rgb(20, 170, 0);border-radius:80px; ; width:100%" ><span style="color:white">Already an Existing user? </span><span style="color:rgb(7, 201, 23)">Log In</span></a>
             </form>
-
-        
     </div>
 </div>
 </div>
 </div>
+{% ifequal error "no" %}
+<script>
+   alert('Sign Up successful');
+   window.location=("{% url 'profile' %}");
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+   alert('Something went wrong, Try Again');
+</script>
+{% endifequal %}
 {% endblock %}
