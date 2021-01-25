@@ -61,23 +61,23 @@
     <HR style="background-color:white">
         <form method="post">
             {% csrf_token %}
-            <label class=" text-white">what's your First Name?</label>
-            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Enter your First Name" name="name"><br>
-            <label class=" text-white">what's your Last Name?</label>
-            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Enter your Last Name" name="name"><br>
-            <label class=" text-white">what's your E-mail?</label>
-            <input type="email" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Enter your Email-id" name="emailid"><br>
-            <label class=" text-white" >Create your Password</label>
-            <input type="password" class="form-control" style="border: 2px solid green;border-radius:80px" placeholder="Enter your Password" name="password"><br>
-            <label class=" text-white">what's your branch?</label>
-            <select class="form-control"  style="border: 2px solid green;border-radius:80px" name="branch">
+            <label class=" text-white">First Name</label>
+            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="John" name="name"><br>
+            <label class=" text-white">Last Name</label>
+            <input type="text" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="Doe" name="name"><br>
+            <label class=" text-white">E-mail</label>
+            <input type="email" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="johndoe@email.com" name="emailid"><br>
+            <label class=" text-white" >Password</label>
+            <input type="password" class="form-control" style="border: 2px solid green;border-radius:80px" placeholder="********" name="password"><br>
+            <label class=" text-white">Branch?</label>
+            <select class="form-control"  style="border: 2px solid green;border-radius:80px" name="Branch">
                 <option value="" disabled selected>Select your branch</option>
                 <option value="BCA">BCA</option>
                 <option value="BBA">BBA</option>
                 <option value="B.com">B.Com</option>
             </select>
             <br>
-            <label class=" text-white">Are you a...</label><br>
+            <label class=" text-white">Select one</label><br>
             <input class=" text-white" type="radio" id="male" name="gender" value="male">
             <label class=" text-white" style="margin-right: 30px;font-size:18" for="male">Student</label>
             <input class=" text-white" type="radio" id="female" name="gender" value="female">
