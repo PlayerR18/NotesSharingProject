@@ -27,5 +27,7 @@ urlpatterns = [
     path('admin_home',admin_home,name='admin_home'),
     path('logout',Logout,name='logout'),
     path('profile',profile,name='profile'),
+    path('profileinfo',profileinfo,name='profileinfo'),
+    path('changepassword',changepassword,name='changepassword'),
     path('',index,name='index')
 ]

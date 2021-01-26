@@ -3,21 +3,21 @@
 {% load static %}
 <div class="transparent">
 <div class="imag">
-    <style> 
+    <style>
         input[type="text"] {
-        
+
             border: 3px solid #ccc;
             -webkit-transition: 0.3s;
             transition: 0.3s;
             opacity:0.5;
           }
-          
+
           input[type="text"]:focus {
             border: 4px solid rgb(7, 221, 0);
             opacity:1;
           }
         input[type="email"] {
-        
+
           border: 3px solid #ccc;
           -webkit-transition: 0.3s;
           transition: 0.3s;
@@ -34,7 +34,6 @@
             transition: 0.3s;
             opacity:0.5;
           }
-          
           input[type=password]:focus {
             border: 4px solid rgb(7, 221, 0);
             opacity:1;
@@ -45,7 +44,6 @@
             transition: 0.3s;
             opacity:0.5;
           }
-          
           select:focus {
             border: 4px solid rgb(7, 221, 0);
             opacity:1;
@@ -68,7 +66,9 @@
             <label class=" text-white">E-mail</label>
             <input type="email" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="lestercrest@email.com" name="email"><br>
             <label class=" text-white" >Password</label>
-            <input type="password" class="form-control" style="border: 2px solid green;border-radius:80px" placeholder="********" name="password"><br>
+            <input type="password" class="form-control" style="border: 2px solid green;border-radius:80px" placeholder="********" name="password">
+            <label class=" text-danger" style="font-size:12; font-style:italic ">Make sure your password must contain 8 letters and must have symbols or numeric values</label>
+                <br>
             <label class=" text-white">Branch?</label>
             <select class="form-control"  style="border: 2px solid green;border-radius:80px" name="branch">
                 <option value="" disabled selected>Select your branch</option>
@@ -79,13 +79,12 @@
                 <option value="M.Com">B.Com</option>
             </select>
             <br>
-            <label class=" text-white">Role</label>
-            <select class="form-control"  style="border: 2px solid green;border-radius:80px" name="role">
-                <option value="" disabled selected>Select your role</option>
-                <option value="Student">Student</option>
-                <option value="Teacher">Teacher</option>
-            </select>
-            <br>
+            
+            <label class=" text-white">Select Role</label><br>
+            <input class=" text-white" type="radio" id="male" name="role" value="Student">
+            <label class=" text-white" style="margin-right: 30px;font-size:18" for="Student">Student</label>
+            <input class=" text-white" type="radio" id="female" name="role" value="Teacher">
+            <label class=" text-white"  style="margin-right: 30px;font-size:18" for="Teacher">Teacher</label><br>
             <input type="submit" class="btn btn-success text-white mt-5" style="border: 2px solid rgb(255, 255, 255);border-radius:80px; width:100%" value="Sign Up"> <br>
             <a href="{%url 'login'%}" class="btn text-black mt-5" style="border: 2px solid rgb(20, 170, 0);border-radius:80px; ; width:100%" ><span style="color:white">Already an Existing user? </span><span style="color:rgb(7, 201, 23)">Log In</span></a>
             </form>

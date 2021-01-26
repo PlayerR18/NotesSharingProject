@@ -1,0 +1,60 @@
+{% extends 'usernavigation.html'%}
+{% block body %}
+{% load static %}
+<h1 class="text-white text-center pt-5">Welcome to Your Profile</h1>
+<hr style="background-color:white">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3 text-success"style= "text-align:center">
+            <b>Full Name:</b><br> 
+            <hr style="background-color:white"> 
+        </div>
+        <div class="col-md-3 text-white" style="text-transform: capitalize;">
+            {{data.user.first_name}} {{data.user.last_name}}
+            <hr style="background-color:white"> 
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3 text-success"style= "text-align:center">
+            <b>E-mail Id:</b><br> 
+            <hr style="background-color:white"> 
+        </div>
+        <div class="col-md-3 text-white">
+            {{data.user.username}}
+            <hr style="background-color:white"> 
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3 text-success"style= "text-align:center">
+            <b>Branch:</b><br> 
+            <hr style="background-color:white"> 
+        </div>
+        <div class="col-md-3 text-white">
+            {{data.branch}}
+            <hr style="background-color:white"> 
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3 text-success"style= "text-align:center">
+            <b>Role:</b><br> 
+            <hr style="background-color:white"> 
+        </div>
+        <div class="col-md-3 text-white">
+            {{data.role}}
+            <hr style="background-color:white"> 
+        </div>
+        </div>
+        <div class="text-center">
+            <br>
+        <a href="#" class="btn btn-success">Edit Profile</a>
+        </div>
+        </div>
+{% endblock %}

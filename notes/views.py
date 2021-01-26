@@ -54,8 +54,8 @@ def signup1(request):
         b=request.POST['branch']
         r=request.POST['role']
         try:
-            user = User.object.create_user(username=e,password=p,first_name=f,last_name=l)
-            Signup.object.create(user=user,branch=b,role=r)
+            user = User.objects.create_user(username=e,password=p,first_name=f,last_name=l)
+            Signup.objects.create(user=user,branch=b,role=r)
             error="no"
         except:
             error="yes"
@@ -75,6 +75,33 @@ def profile(request):
     if not request.user.is_authenticated:
         return redirect('login')
     user = User.objects.get(id=request.user.id)
-    data = Signup.object.get(user = user)
+    data = Signup.objects.get(user = user)
     d = {'data':data,'user':user}
     return render(request,'profile.html',d)
+
+def changepassword(request):
+    if not request.user.is_authenticated:
+        return redirect('login')    
+    error=""
+    if request.method=="POST":
+        o=request.POST['old']
+        n=request.POST['new']
+        c=request.POST['confirm']
+        if c==n:
+            u=User.objects.get(username__exact=request.user.username)
+            u.set_password(n)
+            u.save()
+            error="no"
+        else:
+            error="yes"
+    d={'error':error}
+    return render(request,'changepassword.html',d)
+
+
+def profileinfo(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    user = User.objects.get(id=request.user.id)
+    data = Signup.objects.get(user = user)
+    d = {'data':data,'user':user}
+    return render(request,'profileinfo.html',d)
