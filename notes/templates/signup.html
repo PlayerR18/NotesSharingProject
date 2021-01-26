@@ -51,10 +51,12 @@
         <div class="col-6">
           <br />
           <h2 class="text-white text-center">Sign Up</h2>
-          <label class="text-danger" style="font-size: 12; font-style: italic"
+          <hr style="background-color: white" />
+          <label
+            class="text-danger"
+            //FIXME style="text-align: center; font-size: 12; font-style: italic"
             >All fields are mandatory!</label
           >
-          <hr style="background-color: white" />
           <form method="post">
             {% csrf_token %}
             <label class="text-white">First Name</label>
