@@ -63,18 +63,9 @@ def signup1(request):
         b = request.POST['branch']
         r = request.POST['role']
         try:
-<<<<<<< HEAD
             user = User.objects.create_user(username=e,password=p,first_name=f,last_name=l)
             Signup.objects.create(user=user,branch=b,role=r)
             error="no"
-=======
-            user = User.object.create_user(username=e,
-                                           password=p,
-                                           first_name=f,
-                                           last_name=l)
-            Signup.object.create(user=user, branch=b, role=r)
-            error = "no"
->>>>>>> a3d714a5476484980c0f1e14d80b25fbe9ab4ec7
         except:
             error = "yes"
     d = {'error': error}
@@ -102,7 +93,7 @@ def profile(request):
 
 def changepassword(request):
     if not request.user.is_authenticated:
-        return redirect('login')    
+        return redirect('login')
     error=""
     if request.method=="POST":
         o=request.POST['old']
