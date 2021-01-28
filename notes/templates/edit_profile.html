@@ -1,0 +1,64 @@
+{% extends 'usernavigation.html'%}
+{% block body %}
+{% load static %}
+<h1 class="text-white text-center pt-5">Edit Your Profile</h1>
+<hr style="background-color:white">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6 text-white" style="text-transform: capitalize;">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label> First name</label>
+                        <input type="text" class="form-control" value=" {{data.user.first_name}}"name="first">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label> last name</label>
+                            <input type="text" class="form-control" value=" {{data.user.last_name}}"name="last">
+                            </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label>E-mail:</label>
+                            <input type="text" class="form-control" value=" {{data.user.username}}"name="email" readonly>
+                            </label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>branch</label>
+                                <input type=text value="{{data.branch}}" class="form-control"readonly>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <br>
+                                        <label></label>
+                                        <select type="text" class="form-control" name="branch">
+                                            <option value="" disabled selected>Select your branch</option>
+                                            <option value="BCA">BCA</option>
+                                            <option value="BBA">BBA</option>
+                                            <option value="B.Com">B.Com</option>
+                                            <option value="MBA">MBA</option>
+                                            <option value="M.Com">B.Com</option>
+                                            </select>
+                                    </div>
+                                </div>
+            <hr style="background-color:white"> 
+            <div class="text-center">
+                <br>
+                <input type=submit value="Apply your changes" class="btn btn-success">
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+{% if error %}
+<script>
+    alert('Profile updated sucessfully');
+    window.location="{% url 'profile' %}";
+
+</script>
+{% endif %}
+{% endblock %}
