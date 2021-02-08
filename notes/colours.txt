@@ -1,0 +1,28 @@
+light green = cyan
+hot pink
+cornflower
+Tiffany Blue
+MyNotes Original color = background-image: linear-gradient(rgb(46, 190, 111),rgb(40, 121, 83))
+
+border-radius: 5px for everything!
+
+user login page:
+    1. green buttons remove white border
+    2. green buttons make text as black
+    3. hr line color = tiffany Blue
+    4. text box border inactive colour = cyan
+    5. text box border active colour = magenta/pink
+
+sign up page:
+    1. green buttons remove white border
+    2. green buttons make text as black
+    3. hr line color = tiffany Blue
+    4. text box border inactive colour = cyan
+    5. text box border active colour = magenta/pink
+
+my notes page:
+    1. Delete gradient
+    2. make all text black
+    3. make table black
+    4. MyNotes heading little space needed on top
+    
