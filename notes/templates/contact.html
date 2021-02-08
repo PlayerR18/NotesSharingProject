@@ -1,6 +1,21 @@
 {% extends 'navigation.html'%}
 {% block body %}
 {% load static %}
+<style>
+    @keyframes transitionIn{
+        from{
+            opacity:0;
+            tranform: rotateX(-10deg);
+    
+        }
+        to{
+            opacity:1;
+            tranform: rotateX(0);
+        }
+    }
+    
+    </style>
+    <div style="animation: transitionIn 0.75s;">
 
 <div>
     <h1 class="text-white container pt-5">Contact <span style="color:rgb(17, 201, 0)">Us</span></h1>
@@ -27,4 +42,5 @@
 <br>
 <br>
 <br>
+    </div>
 {% endblock %}

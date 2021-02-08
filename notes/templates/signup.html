@@ -1,6 +1,7 @@
 {% extends 'navigation.html'%}
 {% block body %}
 {% load static %}
+<link rel="stylesheet" rel="static/css/mystyle.css">
 <div class="transparent">
 <div class="imag">
     <style>
@@ -48,7 +49,58 @@
             border: 4px solid rgb(7, 221, 0);
             opacity:1;
         }
-        </style>
+        /* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #1a1a1a;
+  color: rgb(255, 255, 255);
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 15px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+  @keyframes transitionIn{
+      from{
+          opacity:0;
+          tranform: rotateX(-10deg);
+  
+      }
+      to{
+          opacity:1;
+          tranform: rotateX(0);
+      }
+  }
+  
+  </style>
+  <div style="animation: transitionIn 0.75s;">
+        
+          
 <div class="container mt-2 ">
 <div class="row">
 <div class="col-3">
@@ -66,9 +118,15 @@
             <label class=" text-white">E-mail</label>
             <input type="email" class="form-control" style="border: 2px solid green; border-radius:80px;color:black" placeholder="lestercrest@email.com" name="email"><br>
             <label class=" text-white" >Password</label>
-            <input type="password" class="form-control" style="border: 2px solid green;border-radius:80px" placeholder="********" name="password">
-            <label class=" text-danger" style="font-size:12; font-style:italic ">Make sure your password must contain 8 letters and must have symbols or numeric values</label>
-                <br>
+            <input type="password" class="form-control" style="border: 2px solid green;border-radius:80px" placeholder="********" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <div id="message">
+              <h6>Password must contain the following:</h6>
+              <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+              <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+              <p id="number" class="invalid">A <b>number</b></p>
+              <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>    
+            <br>
             <label class=" text-white">Branch?</label>
             <select class="form-control"  style="border: 2px solid green;border-radius:80px" name="branch">
                 <option value="" disabled selected>Select your branch</option>
@@ -88,6 +146,65 @@
             <input type="submit" class="btn btn-success text-white mt-5" style="border: 2px solid rgb(255, 255, 255);border-radius:80px; width:100%" value="Sign Up"> <br>
             <a href="{%url 'login'%}" class="btn text-black mt-5" style="border: 2px solid rgb(20, 170, 0);border-radius:80px; ; width:100%" ><span style="color:white">Already an Existing user? </span><span style="color:rgb(7, 201, 23)">Log In</span></a>
             </form>
+            <script>
+              var myInput = document.getElementById("password");
+              var letter = document.getElementById("letter");
+              var capital = document.getElementById("capital");
+              var number = document.getElementById("number");
+              var length = document.getElementById("length");
+              
+              // When the user clicks on the password field, show the message box
+              myInput.onfocus = function() {
+                document.getElementById("message").style.display = "block";
+              }
+              
+              // When the user clicks outside of the password field, hide the message box
+              myInput.onblur = function() {
+                document.getElementById("message").style.display = "none";
+              }
+              
+              // When the user starts to type something inside the password field
+              myInput.onkeyup = function() {
+                // Validate lowercase letters
+                var lowerCaseLetters = /[a-z]/g;
+                if(myInput.value.match(lowerCaseLetters)) {  
+                  letter.classList.remove("invalid");
+                  letter.classList.add("valid");
+                } else {
+                  letter.classList.remove("valid");
+                  letter.classList.add("invalid");
+                }
+                
+                // Validate capital letters
+                var upperCaseLetters = /[A-Z]/g;
+                if(myInput.value.match(upperCaseLetters)) {  
+                  capital.classList.remove("invalid");
+                  capital.classList.add("valid");
+                } else {
+                  capital.classList.remove("valid");
+                  capital.classList.add("invalid");
+                }
+              
+                // Validate numbers
+                var numbers = /[0-9]/g;
+                if(myInput.value.match(numbers)) {  
+                  number.classList.remove("invalid");
+                  number.classList.add("valid");
+                } else {
+                  number.classList.remove("valid");
+                  number.classList.add("invalid");
+                }
+                
+                // Validate length
+                if(myInput.value.length >= 8) {
+                  length.classList.remove("invalid");
+                  length.classList.add("valid");
+                } else {
+                  length.classList.remove("valid");
+                  length.classList.add("invalid");
+                }
+              }
+              </script>
     </div>
 </div>
 </div>
@@ -102,5 +219,6 @@
 <script>
    alert('Something went wrong, Try Again');
 </script>
+</div>
 {% endifequal %}
 {% endblock %}

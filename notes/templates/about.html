@@ -1,8 +1,22 @@
 {% extends 'navigation.html'%}
 {% block body %}
 {% load static %}
-
-<div>
+<style>
+    @keyframes transitionIn{
+        from{
+            opacity:0;
+            tranform: rotateX(-10deg);
+    
+        }
+        to{
+            opacity:1;
+            tranform: rotateX(0);
+        }
+    }
+    
+    </style>
+    <div style="animation: transitionIn 0.75s;">
+        <div>
 <h1 class="text-white container pt-5">About <span style="color:rgb(17, 201, 0)">Us</span></h1>
     <hr style="background-color:white">
 </div>
@@ -20,5 +34,6 @@ Having trouble assessing the notes of your students? Cut the hassle, use ShareNo
 This website is made with python , Django , HTML and CSS</span></h4> </p>
 <br>
 <br>
+</div>
 </div>
 {% endblock %}

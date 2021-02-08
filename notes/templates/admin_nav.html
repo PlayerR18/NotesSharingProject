@@ -30,7 +30,7 @@
     <body>
     <nav class="navbar navbar-expand-sm justify-content-end" style ="background-color: rgb(0, 0, 0)">
     <ul class="navbar-nav">
-      <h3 class="text-left justify-content-start" style="margin-right: 900px ;text-align: justify"><span style="color:white">Share</span><span style="color:rgb(7, 201, 23)">Note</span></h4>
+      <h3 class="text-left justify-content-start" style="margin-right: 900px ;text-align: justify"><span style="color:white">Share</span><span style="color:rgb(7, 201, 23)">Note</span></h3>
     <li class="navbar-item">
       
     <a class="nav-link" style="margin-right: 50px;" href="{%url 'admin_home'%}">Home</a>
@@ -38,15 +38,15 @@
     <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" style="margin-right: 50px;" data-toggle="dropdown" href="#">Notes</a>
     <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Pending</a>
-        <a class="dropdown-item" href="#">Accepted</a>
-        <a class="dropdown-item" href="#">Rejected</a>
-        <a class="dropdown-item" href="#">All Notes</a>
+        <a class="dropdown-item" href="{%url 'pending_notes'%}">Pending</a>
+        <a class="dropdown-item" href="{%url 'accepted_notes'%}">Accepted</a>
+        <a class="dropdown-item" href="{%url 'rejected_notes'%}">Rejected</a>
+        <a class="dropdown-item" href="{%url 'all_notes'%}">All Notes</a>
     </div>
 </li>
 
     <li class="navbar-item">
-    <a class="nav-link" style="margin-right: 50px;" href="{%url 'admin_home'%}">Users</a>
+    <a class="nav-link" style="margin-right: 50px;" href="{%url 'view_users'%}">Users</a>
     </li>
     <li class="navbar-item">
     <a class="nav-link" style="margin-right: 50px;" href="{%url 'logout'%}">Log out</a>

@@ -1,6 +1,21 @@
 {% extends 'usernavigation.html'%}
 {% block body %}
 {% load static %}
+<style>
+    @keyframes transitionIn{
+        from{
+            opacity:0;
+            tranform: rotateX(-10deg);
+    
+        }
+        to{
+            opacity:1;
+            tranform: rotateX(0);
+        }
+    }
+    
+    </style>
+    <div style="animation: transitionIn 0.75s;">
 <h1 class="text-white text-center pt-5">Welcome to Your Profile</h1>
 <hr style="background-color:white">
 <div class="container mt-5">
@@ -57,4 +72,5 @@
         <a href="{%url 'edit_profile'%}" class="btn btn-success">Edit Profile</a>
         </div>
         </div>
+    </div>
 {% endblock %}

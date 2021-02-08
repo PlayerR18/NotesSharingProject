@@ -39,7 +39,20 @@
         transition: 0.4s;
     }
     h1,h2,h4{padding:25px}
-</style>
+        @keyframes transitionIn{
+            from{
+                opacity:0;
+                tranform: rotateX(-10deg);
+        
+            }
+            to{
+                opacity:1;
+                tranform: rotateX(0);
+            }
+        }
+        
+        </style>
+        <div style="animation: transitionIn 0.75s;">
 <br>
 <h1 class="text-white text-center"><span style="color:rgb(0, 255, 98); font-family:'Consolas'; font-weight:bold; font-size:70;">Welcome </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:50;">to </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;">Share</span><span style="color:rgb(0, 255, 98); font-weight:bold; font-family:'Consolas'; font-size:70;">Note</span> <span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;"> ,{{request.user.username}}!</span></h1>
 <br>
@@ -47,28 +60,29 @@
     <div class="row">
         <div class="col-sm-3 text-center mydiv">
             <div class= "container1 containe1">
-                <h2 class="text-white">5</h2>
-                <a href="#"><h4><span style="color:rgb(255, 255, 255)"> Pending</span><span style="color:rgb(51, 255, 0)"> Notes</h4></a>
+                <h2 class="text-white">{{pn}}</h2>
+                <a href="{%url 'pending_notes'%}"><h4><span style="color:rgb(255, 255, 255)"> Pending</span><span style="color:rgb(51, 255, 0)"> Notes</h4></a>
             </div>
             </div>
             <div class="col-sm-3 text-center mydiv">
                 <div class="container2 containe1">
-                    <h2 class="text-white">5</h2>
-                    <a href="#"><h4><span style="color:rgb(255, 255, 255)">Accepted</span><span style="color:rgb(9, 255, 0)"> Notes</h4></a>
+                    <h2 class="text-white">{{an}}</h2>
+                    <a href="{%url 'accepted_notes'%}"><h4><span style="color:rgb(255, 255, 255)">Accepted</span><span style="color:rgb(9, 255, 0)"> Notes</h4></a>
                 </div>
                 </div>
                 <div class="col-sm-3 text-center mydiv">
                     <div class="container3 containe1">
-                        <h2 class="text-white">5</h2>
-                        <a href="#"><h4><span style="color:rgb(255, 255, 255)">Rejected</span><span style="color:rgb(10, 255, 1)"> Notes</h4></a>
+                        <h2 class="text-white">{{rn}}</h2>
+                        <a href="{%url 'rejected_notes'%}"><h4><span style="color:rgb(255, 255, 255)">Rejected</span><span style="color:rgb(10, 255, 1)"> Notes</h4></a>
                     </div>
                     </div>
                     <div class="col-sm-3 text-center mydiv">
                         <div class="container4 containe1">
-                            <h2 class="text-white">5</h2>
-                            <a href="#"><h4><span style="color:rgb(255, 255, 255)">All</span><span style="color:rgb(43, 255, 0)"> Notes</h4></a>
+                            <h2 class="text-white">{{aln}}</h2>
+                            <a href="{%url 'all_notes'%}"><h4><span style="color:rgb(255, 255, 255)">All</span><span style="color:rgb(43, 255, 0)"> Notes</h4></a>
                         </div>
                         </div>>
     </div>
 </div>
+        </div>
 {% endblock %}

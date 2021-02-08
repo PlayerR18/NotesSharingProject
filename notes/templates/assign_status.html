@@ -1,0 +1,44 @@
+{% extends 'admin_nav.html'%}
+{% block body %}
+{% load static %}
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+
+<div class="container mt-5">
+    <h1 class="text-center"><span style="color:white">Assign</span><span style="color:rgb(7, 201, 23)"> Status</span></h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <label class="text-light">Notes ID</label>
+        <input type="text" name="notesid" class="form-control" value="{{notes.id}}" readonly>
+
+        <label class="text-light">Status</label>
+        <select name="status" class="form-control" style="text-white">
+            <option value="Accept">Accept</option>
+            <option value="Reject">Reject</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+        </form>
+        </div>
+
+        {% ifequal error "no" %}
+<script>
+   alert('Status Updated successfully');
+</script>
+{% endifequal %}
+{% ifequal error "yes" %}
+<script>
+   alert('Something went wrong, Try Again');
+</script>
+{% endifequal %}
+
+{% endblock %}

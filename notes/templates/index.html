@@ -13,7 +13,20 @@ body{
     background-color:black;
 }
 
+@keyframes transitionIn{
+    from{
+        opacity:0;
+        tranform: rotateX(-10deg);
+
+    }
+    to{
+        opacity:1;
+        tranform: rotateX(0);
+    }
+}
+
 </style>
+<div style="animation: transitionIn 0.75s;">
 <div class="image">
 <div class="transparentbox">
 <p>Share and <span style="color:rgb(7, 201, 23)"> Study Now</span>!</p>
@@ -45,6 +58,7 @@ body{
 <div class="box1">
     <p class="halfcircle"><i class="text-center fas fa-download text-black mt-4" style="font-size:40px"></i></p>
     <p class="halfcircleBottom" style="font-size:20px">Download notes</i></p>
+</div>
 </div>
 </div>
 </div>

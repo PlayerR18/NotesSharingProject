@@ -34,6 +34,16 @@ urlpatterns = [
     path('changepassword',changepassword,name='changepassword'),
     path('edit_profile',edit_profile,name='edit_profile'),
     path('upload_notes',upload_notes,name='upload_notes'),
+    path('view_mynotes',view_mynotes,name='view_mynotes'),
+    path('delete_mynotes/<int:pid>',delete_mynotes,name='delete_mynotes'),
+    path('view_users',view_users,name='view_users'),
+    path('delete_users/<int:pid>',delete_users,name='delete_users'),
+    path('pending_notes',pending_notes,name='pending_notes'),
+    path('accepted_notes',accepted_notes,name='accepted_notes'),
+    path('accepted_user',accepted_user,name='accepted_user'),
+    path('rejected_notes',rejected_notes,name='rejected_notes'),
+    path('all_notes',all_notes,name='all_notes'),
+    path('assign_status/<int:pid>',assign_status,name='assign_status'),
     path('',index,name='index')
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

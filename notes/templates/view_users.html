@@ -1,0 +1,112 @@
+{% extends 'admin_nav.html'%}
+{% block body %}
+{% load static %}
+<script class="text-light" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script class="text-light" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script class="text-light" src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+<link class="text-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link class="text-light" rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+<script class="text-light" >
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+    <style>
+        text-color:white;
+
+        input[type="text"] {
+
+            border: 3px solid #ccc;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+            opacity:0.5;
+          }
+
+          input[type="text"]:focus {
+            border: 4px solid rgb(7, 221, 0);
+            opacity:1;
+          }
+        input[type="email"] {
+
+          border: 3px solid #ccc;
+          -webkit-transition: 0.3s;
+          transition: 0.3s;
+          opacity:0.5;
+        }
+        input[type="email"]:focus {
+          border: 4px solid rgb(7, 221, 0);
+          opacity:1;
+        }
+          input[type="password"] {
+            border: 3px solid #ccc;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+            opacity:0.5;
+          }
+          input[type=password]:focus {
+            border: 4px solid rgb(7, 221, 0);
+            opacity:1;
+        }
+        select{
+            border: 3px solid #ccc;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+            opacity:0.5;
+          }
+          select:focus {
+            border: 4px solid rgb(7, 221, 0);
+            opacity:1;
+        }
+        textarea{
+          border: 3px solid #ccc;
+          -webkit-transition: 0.3s;
+          transition: 0.3s;
+          opacity:0.5;
+        }
+        textarea:focus {
+          border: 4px solid rgb(7, 221, 0);
+          opacity:1;
+      }
+        input[type="file"] {
+          border: 3px solid #ccc;
+          -webkit-transition: 0.3s;
+          transition: 0.3s;
+          opacity:0.5;
+        }
+        input[type=file]:focus {
+          border: 4px solid rgb(7, 221, 0);
+          opacity:1;
+      }
+        </style>
+<div class="container mt-5 pt-8" style="background-image: linear-gradient(rgb(46, 190, 147),rgb(40, 121, 83)); border-radius:20px;">
+    <h2 class=" text-center text-white">All Users</h2>
+    <HR style="background-color:rgb(255, 255, 255)">
+        <table class="table table-bordered"  id="example">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Full Name</th>
+                    <th>Email Id</th>
+                    <th>Branch</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                    </tr>
+            </thead>
+                    {% for i in users %}
+                    <tbody>
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td style="text-transform: capitalize">{{i.user.first_name}} {{i.user.last_name}}</td>
+                        <td>{{i.user.username}}</td>
+                        <td>{{i.branch}}</td>
+                        <td>{{i.role}}</td>
+                        <td><a href="{% url 'delete_users' i.user.id %}" class="btn text-white" style="margin-right: 10px; border: 2px solid rgb(255, 255, 255);border-radius:80px; width:55%; background-image: linear-gradient(rgb(177, 22, 22),rgb(206, 17, 17));" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                        </table>
+
+    </div>
+</div>
+</div>      
+{% endblock %}

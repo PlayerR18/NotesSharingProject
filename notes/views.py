@@ -79,7 +79,12 @@ def signup1(request):
 def admin_home(request):
     if not request.user.is_staff:
         return redirect('login_admin')
-    return render(request, 'admin_home.html')
+    pn = Notes.objects.filter(status="pending").count()
+    an = Notes.objects.filter(status="Accept").count()
+    rn = Notes.objects.filter(status="Reject").count()
+    aln = Notes.objects.all().count()
+    d={'pn': pn,'an': an,'rn': rn,'aln': aln}
+    return render(request, 'admin_home.html',d)
 
 
 def Logout(request):
@@ -154,9 +159,93 @@ def upload_notes(request):
         d = request.POST['description']
         u = User.objects.filter(username=request.user.username).first()
         try:
-            Notes.objects.create_user(username=u,uploadingdate=date.today(),branch=b,subject=s,notesfile=n,filetype=f,description=d,status='pending')
+            #Notes.objects.create_user(username=u,uploadingdate=date.today(),branch=b,subject=s,notesfile=n,filetype=f,description=d,status='pending')
+            notesobj = Notes(user=u,uploadingdate=date.today(),branch=b,subject=s,notesfile=n,filetype=f,description=d,status='pending')       
+            notesobj.save()
             error = "no"
         except:
             error = "yes"
     d = {'error': error}
     return render(request,'upload_notes.html',d)
+
+def view_mynotes(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    user = User.objects.get(id=request.user.id)
+    notes = Notes.objects.filter(user=user)
+    
+    d = {'notes': notes}
+    return render(request, 'view_mynotes.html', d)
+
+def delete_mynotes(request,pid):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    notes = Notes.objects.get(id=pid)
+    notes.delete()
+    return redirect('view_mynotes')
+
+def view_users(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+    users = Signup.objects.all()
+    d = {'users': users}
+    return render(request, 'view_users.html', d)
+
+def delete_users(request,pid):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+    user = User.objects.get(id=pid)
+    user.delete()
+    return redirect('view_users')
+
+def pending_notes(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+    notes = Notes.objects.filter(status="pending")
+    
+    d = {'notes': notes}
+    return render(request, 'pending_notes.html', d)
+
+def accepted_notes(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+    notes = Notes.objects.filter(status="Accept")
+    d = {'notes': notes}
+    return render(request, 'accepted_notes.html', d)
+
+def accepted_user(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    notes = Notes.objects.filter(status="Accept")
+    d = {'notes': notes}
+    return render(request, 'accepted_user.html', d)
+
+def rejected_notes(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+    notes = Notes.objects.filter(status="Reject")
+    d = {'notes': notes}
+    return render(request, 'rejected_notes.html', d)
+
+def all_notes(request):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+    notes = Notes.objects.all()
+    d = {'notes': notes}
+    return render(request, 'all_notes.html', d)
+
+def assign_status(request,pid):
+    if not request.user.is_authenticated:
+        return redirect('login_admin')
+    notes = Notes.objects.get(id=pid)
+    error = ""
+    if request.method == 'POST':
+        s = request.POST['status']
+        try:
+            notes.status=s
+            notes.save()
+            error="no"
+        except:
+            error="yes"
+    d={'notes':notes,'error':error}
+    return render(request, 'assign_status.html', d)
