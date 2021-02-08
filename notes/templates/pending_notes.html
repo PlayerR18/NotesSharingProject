@@ -86,10 +86,13 @@
   <div class="col-2"></div>
   <div class="container1 col-12">
     <h2 class="text-white text-center">Pending Notes</h2>
-    <hr style="background-color: white" />
+    <hr style="background-color: hotpink" />
     <table
       class="table table-striped table-hover table-dark"
-      style="border-radius: 10px"
+      style="
+        border-radius: 10px;
+        filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.25));
+      "
       id="example"
     >
       <thead>
@@ -122,16 +125,28 @@
           <td>
             <a
               href="{% url 'assign_status' i.id %}"
-              class="btn btn-success text-white"
-              style="border-radius: 5px; width: 100%"
+              class="btn font-weight-bold"
+              style="
+                border-radius: 5px;
+                width: 100%;
+                background-color: #356d4c;
+                color: #00ff6a;
+                filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.25));
+              "
               >Change&nbspStatus</a
             >
           </td>
           <td>
             <a
               href="{{i.notesfile.url}}"
-              class="btn btn-primary text-white"
-              style="border-radius: 5px; width: 100%"
+              class="btn font-weight-bold"
+              style="
+                background-color: #14527c;
+                color: #36eee0;
+                border-radius: 5px;
+                width: 100%;
+                filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.25));
+              "
               >Download</a
             >
           </td>

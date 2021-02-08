@@ -88,8 +88,11 @@
     <h2 class="text-white text-center">Rejected Notes</h2>
     <hr class="" style="background-color: #f652a0" />
     <table
-      class="table table-bordered table-dark table-striped table-hover"
-      style="border-radius: 10px"
+      class="table table-dark table-striped table-hover"
+      style="
+        border-radius: 10px;
+        filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.25));
+      "
       id="example"
     >
       <thead>
@@ -123,7 +126,13 @@
             <a
               href="{% url 'assign_status' i.id %}"
               class="btn font-weight-bold"
-              style="background-color: #36eee0; border-radius: 5px; width: 100%"
+              style="
+                border-radius: 5px;
+                width: 100%;
+                background-color: #356d4c;
+                color: #00ff6a;
+                filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.25));
+              "
               >Change&nbspStatus</a
             >
           </td>
@@ -131,12 +140,12 @@
             <a
               href="{{i.notesfile.url}}"
               class="btn font-weight-bold"
-              class="btn font-weight-bold"
               style="
                 background-color: #14527c;
                 color: #36eee0;
                 border-radius: 5px;
                 width: 100%;
+                filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.25));
               "
               >Download</a
             >
