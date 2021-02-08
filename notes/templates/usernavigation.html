@@ -18,10 +18,7 @@
     }
 
     .nav-link:hover {
-        color: rgb(30, 255, 0);
-        background-color: rgb(0, 0, 0);
-        border-radius: 60px;
-        opacity: 0.9;
+        color: #36EEE0;
         transition: 0.3s;
     }
 </style>
@@ -29,8 +26,7 @@
 <body>
     <nav class="navbar navbar-expand-sm justify-content-end" style="background-color: rgb(0, 0, 0)">
         <ul class="navbar-nav">
-            <h3 class="text-left justify-content-start" style="margin-right: 550px ;text-align: justify"><span
-                    style="color:white">Share</span><span style="color:rgb(7, 201, 23)">Note</span></h4>
+            <h3 class="text-left justify-content-start" style="margin-right: 550px ;"><span style="color:white">Share</span><span style="color:#36EEE0">Note</span></h3>
                 <li class="navbar-item">
 
                     <a class="nav-link" style="margin-right: 50px;" href="{%url 'profile'%}">Home</a>
@@ -48,7 +44,7 @@
                     <a class="nav-link" style="margin-right: 50px;" href="{%url 'logout'%}">Log&nbspOut</a>
                 </li>
                 <div class="btn-group text-center">
-                    <button type="button" class="btn btn-success dropdown-toggle" style="margin-right: 20px;" data-toggle="dropdown">Welcome
+                    <button type="button" class="btn dropdown-toggle" style="margin-right: 20px; background-color: #36EEE0;" data-toggle="dropdown">Welcome
                         {{request.user.first_name}}</button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{%url 'profileinfo'%}">Profile</a>
