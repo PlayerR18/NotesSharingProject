@@ -21,10 +21,14 @@
         color: #36EEE0;
         transition: 0.3s;
     }
-    .dropdown-item:hover{
-        background: hotpink;
-        color:hotpink;
-    }
+    .dropdown-toggle:hover 
+    { color:#14527c; }
+
+
+   .dropdown-item[id="o"]:focus-visible {
+    color: rgb(7, 221, 0);
+    opacity: 1;
+  }
 </style>
 
 <body>
@@ -50,9 +54,9 @@
                     <button type="button" class="btn dropdown-toggle" style="margin-right: 20px; background-color: #36EEE0;font-weight: bold;" data-toggle="dropdown">Welcome
                         {{request.user.first_name}}</button>
                         <div class="dropdown-menu" style="background: #000;;">
-                            <a class="dropdown-item" style="background-color: black; color: #36EEE0; font-weight: bold;" href="{%url 'profileinfo'%}">Profile</a>
-                            <a class="dropdown-item" style="background-color: black; color: #36EEE0; font-weight: bold;" href="{%url 'edit_profile'%}">Edit Profile</a>
-                            <a class="dropdown-item" style="background-color: black; color: #36EEE0; font-weight: bold;" href="{%url 'changepassword'%}">Change Password</a>
+                            <a class="dropdown-item" id="o" style="background-color: rgb(43, 43, 43); color: #36EEE0; font-weight: bold;" href="{%url 'profileinfo'%}">Profile</a>
+                            <a class="dropdown-item" id="o" style="background-color: rgb(43, 43, 43); color: #36EEE0; font-weight: bold;" href="{%url 'edit_profile'%}">Edit Profile</a>
+                            <a class="dropdown-item" id="o" style="background-color: rgb(43, 43, 43); color: #36EEE0; font-weight: bold;" href="{%url 'changepassword'%}">Change Password</a>
                         </div>
         </ul>
     </nav>

@@ -71,6 +71,10 @@
       opacity: 1;
       tranform: rotateX(0);
     }
+    
+  }
+  span[type="123"]:hover{
+    color: rgb(7, 221, 0);
   }
 </style>
 <div style="animation: transitionIn 0.75s">
@@ -111,12 +115,8 @@
       <div class="col-sm-3 text-center mydiv">
         <div class="container1 container1h">
           <h2 class="text">{{pn}}</h2>
-          <a href="{%url 'pending_notes'%}"
-            ><h4>
-              <span style="color: black"> Pending</span
-              ><span style="color: white">Notes</span>
-            </h4></a
-          >
+          <a href="{%url 'pending_notes'%}">
+            <h4><span style="color: black">Pending</span><span type="123" style="color: rgb(226, 21, 147)">Notes</span></h4></a>
         </div>
       </div>
       <div class="col-sm-3 text-center mydiv">
@@ -125,7 +125,7 @@
           <a href="{%url 'accepted_notes'%}"
             ><h4>
               <span style="color: black">Accepted</span
-              ><span style="color: white">Notes</span>
+              ><span style="color: #274cb4">Notes</span>
             </h4></a
           >
         </div>
@@ -136,7 +136,7 @@
           <a href="{%url 'rejected_notes'%}"
             ><h4>
               <span style="color: black">Rejected</span
-              ><span style="color: white">Notes</span>
+              ><span style="color: rgb(0, 255, 98)">Notes</span>
             </h4></a
           >
         </div>
@@ -147,7 +147,7 @@
           <a href="{%url 'all_notes'%}"
             ><h4>
               <span style="color: black">All</span
-              ><span style="color: white">Notes</span>
+              ><span style="color: rgb(103, 95, 173)">Notes</span>
             </h4>
           </a>
         </div>

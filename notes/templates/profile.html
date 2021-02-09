@@ -5,36 +5,41 @@
 <style>
     .container1
     {
-        background-image: linear-gradient(rgb(233, 64, 129),rgb(31, 31, 31));
+        background-color: #69124a;
         border-radius: 10px;
-        opacity: 0.5;
     }
     .container2
     {
-        background-image: linear-gradient(rgb(218, 87, 0),rgb(31, 31, 31));
+        background-color:#14527c ;
         border-radius: 10px;
-        opacity: 0.5;
     }
     .container3
     {
-        background-image: linear-gradient(rgb(255, 23, 23),rgb(31, 31, 31));
+        background-color: #126940;
         border-radius: 10px;
-        opacity: 0.5;
     }
-    .container4
-    {
-        background-image: linear-gradient( rgb(20, 65, 216) , rgb(31, 31, 31));
-        border-radius: 10px;
-        opacity: 0.5;
-    }
-    
-    .containe1:hover
-    {
-        background-image: linear-gradient(rgb(9, 155, 148), rgb(31, 31, 31));
+   
+
+    .container3:hover {
+        background-color:#1cd416 ;
         border-radius: 10px;
         opacity: 1;
         transition: 0.6s;
-    }
+      }
+      .container2:hover {
+        background-color:#2c34a7 ;
+        border-radius: 10px;
+        opacity: 1;
+        transition: 0.6s;
+      }
+      .container1:hover {
+        background-color: #f652a0;
+        border-radius: 10px;
+        opacity: 1;
+        transition: 0.6s;
+      }
+
+
     .mydiv:hover{
         transform:translateY(-15px);
         transition: 0.4s;
@@ -55,25 +60,29 @@
         
         </style>
         <div style="animation: transitionIn 0.75s;">
-            <h1 class="text-white text-center pt-5"><span style="color:rgb(0, 255, 98); font-family:'Consolas'; font-weight:bold; font-size:70;">Welcome </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:50;">to </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;">Share</span><span style="color:rgb(0, 255, 98); font-weight:bold; font-family:'Consolas'; font-size:70;">Note</span> <span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;">,{{request.user.first_name}}!</span></h1>
-        <div class="col-12 text-center mydiv">
-            <div class= "container1 containe1">
-                <h2 class="text-white fas fa-upload"></h2>
-                <a href="{%url 'upload_notes'%}"><h4><span style="color:rgb(255, 255, 255)">Start uploading your notes</span><span style="color:rgb(51, 255, 0)"> here</h4></a>
+            <h1 class="text-white text-center pt-5"><span style="color:#36EEE0; font-family:'Consolas'; font-weight:bold; font-size:70;">Welcome </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:50;">to </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;">Share</span><span style="color:#36EEE0; font-weight:bold; font-family:'Consolas'; font-size:70;">Note</span> <span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;">,{{request.user.first_name}}!</span></h1>
+            <div class="container col-5 mt-5">
+                <div class="col-sm-12">
+                  </div>
+                  <div class="col-12 text-center mydiv">
+            <div class= "container3 col-12">
+                <h2 class="text-black fas fa-upload"></h2>
+                <a href="{%url 'upload_notes'%}"><h4><span style="color:rgb(0, 0, 0)">Start uploading your notes</span><span style="color:rgb(0, 255, 191)"> here</h4></a>
             </div>
+                  </div>
           
-            </div>
+            
                 
                     <div class="col-12 text-center mydiv">
-                        <div class="container4 containe1">
-                            <h2 class="text-white fas fa-hdd"></h2>
-                            <a href="{%url 'view_mynotes'%}"><h4><span style="color:rgb(255, 255, 255)">View all your notes</span><span style="color:rgb(43, 255, 0)"> here</h4></a>
+                        <div class="container2 containe1">
+                            <h2 class="text-black fas fa-hdd"></h2>
+                            <a href="{%url 'view_mynotes'%}"><h4><span style="color:rgb(0, 0, 0)">View all your notes</span><span style="color:rgb(0, 255, 191)"> here</h4></a>
                         </div>
                         </div>
                         <div class="col-12 text-center mydiv">
-                            <div class="container2 containe1">
-                                <h2 class="text-white fas fa-download"></h2>
-                                <a href="{%url 'accepted_user'%}"><h4><span style="color:rgb(255, 255, 255)">View and Download your friend's</span><span style="color:rgb(43, 255, 0)"> Notes</h4></a>
+                            <div class="container1 containe1">
+                                <h2 class="text-black fas fa-download"></h2>
+                                <a href="{%url 'accepted_user'%}"><h4><span style="color:rgb(0, 0, 0)">View and Download your friend's</span><span style="color:rgb(0, 255, 191)"> Notes</h4></a>
                             </div>
                             </div>
     </div>
