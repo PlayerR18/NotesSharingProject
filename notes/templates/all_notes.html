@@ -17,7 +17,7 @@
 </script>
 <style>
   .container1 {
-    background-image: linear-gradient(#4c5270, #4c5270);
+    background-image: linear-gradient(#3777a1 , #3777a1);
     border-radius: 10px;
   }
   input[type="text"] {
@@ -81,12 +81,26 @@
     border: 4px solid #36eee0;
     opacity: 1;
   }
+  @keyframes transitionIn{
+    from{
+        opacity:0;
+        tranform: rotateX(-10deg);
+
+    }
+    to{
+        opacity:1;
+        tranform: rotateX(0);
+    }
+}
+
 </style>
+<div style="animation: transitionIn 0.75s;">
 <div class="col-12 mt-5">
   <div class="col-2"></div>
   <div class="container1 col-12">
-    <h2 class="text-white text-center">All Notes</h2>
-    <hr style="background-color: hotpink" />
+  <br>
+    <h2 class="text-black text-center"><span style="font-family:'Consolas'; font-weight:bold">All</span><span style="color:#69124A; font-family:'Consolas'; font-weight:bold"> Notes</span></h2>
+    <hr style="background-color: #69124A; border : 3px solid #69124A " >
     <table
       class="table table-striped table-hover table-dark"
       style="
@@ -155,5 +169,6 @@
       </tbody>
     </table>
   </div>
+</div>
 </div>
 {% endblock %}
