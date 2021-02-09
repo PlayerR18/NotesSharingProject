@@ -16,10 +16,13 @@
   });
 </script>
 
-<div class="container mt-5">
+<div class="container col-3 mt-5">
+  <div class="col-sm-12">
+    </div>
+    <div class="col-12">
   <h1 class="text-center">
     <span style="color: white">Assign</span
-    ><span style="color: rgb(7, 201, 23)"> Status</span>
+    ><span style="color: #36EEE0"> Status</span>
   </h1>
   <hr />
   <form method="post">
@@ -30,17 +33,16 @@
       name="notesid"
       class="form-control"
       value="{{notes.id}}"
-      readonly
-    />
+      readonly>
 
     <label class="text-light">Status</label>
     <select name="status" class="form-control" style="text-white">
       <option value="Accept">Accept</option>
       <option value="Reject">Reject</option>
     </select>
-    <br />
-    <input type="submit" value="Submit" />
+    <input type="submit" class="btn mt-5" style="color:#14527C; border-radius:7px; background-color: #36EEE0; margin-right: 30px; width:100%; font-weight:bold; " value="Submit">
   </form>
+</div>
 </div>
 
 {% ifequal error "no" %}
