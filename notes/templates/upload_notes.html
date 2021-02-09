@@ -103,7 +103,7 @@
           {% csrf_token %}
           <label class="text-white">Branch</label>
           <select
-            class="form-control bg-dark border-dark text-white"
+            class="form-control bg-dark text-white"
             style="
               border: 2px solid #36eee0;
               filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.25));
@@ -135,11 +135,14 @@
           <label class="text-white">Upload File</label>
           <input
             type="file"
-            class="form-control bg-dark text-white"
+            class="form-control bg-dark text-white btn-dark"
             style="
               filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.25));
               border: 2px solid #36eee0;
               border-radius: 10px;
+              padding-left: 3px;
+              padding-top: 2px;
+              padding-bottom: 2px;
               color: black;
             "
             name="notesfile"
