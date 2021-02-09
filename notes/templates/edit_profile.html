@@ -3,7 +3,7 @@
 {% load static %}
 
 <h1 class="text-white text-center pt-5">Edit Your Profile</h1>
-<hr style="background-color:white">
+<hr style="background-color:hotpink">
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-3">
@@ -14,29 +14,29 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label> First name</label>
-                        <input type="text" class="form-control" value=" {{data.user.first_name}}"name="first">
+                        <input type="text" class="form-control bg-dark text-white" value=" {{data.user.first_name}}"name="first">
                         </div>
                         <div class="form-group col-md-6">
                             <label> last name</label>
-                            <input type="text" class="form-control" value=" {{data.user.last_name}}"name="last">
+                            <input type="text" class="form-control bg-dark text-white" value=" {{data.user.last_name}}"name="last">
                             </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label>E-mail:</label>
-                            <input type="text" class="form-control" value=" {{data.user.username}}"name="email" readonly>
+                            <input type="text" class="form-control bg-dark text-white" value=" {{data.user.username}}"name="email" readonly>
                             </label>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>branch</label>
-                                <input type=text value="{{data.branch}}" class="form-control"readonly>
+                                <input type=text value="{{data.branch}}" class="form-control bg-dark text-white"readonly>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <br>
                                         <label></label>
-                                        <select type="text" class="form-control" name="branch">
+                                        <select type="text" class="form-control bg-dark text-white" name="branch">
                                             <option value="" disabled selected>Select your branch</option>
                                             <option value="BCA">BCA</option>
                                             <option value="BBA">BBA</option>
@@ -46,10 +46,15 @@
                                             </select>
                                     </div>
                                 </div>
-            <hr style="background-color:white"> 
+            <hr style="background-color:hotpink"> 
             <div class="text-center">
                 <br>
-                <input type=submit value="Apply your changes" class="btn btn-success">
+                <input type=submit value="Apply your changes" class="btn" style="background-color: #14527c;
+                color: #36eee0;
+                border-radius: 5px;
+                width: 100%;
+                filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.25));
+              ">
             </div>
         </form>
         </div>

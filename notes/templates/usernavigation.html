@@ -21,6 +21,10 @@
         color: #36EEE0;
         transition: 0.3s;
     }
+    .dropdown-item:hover{
+        background: hotpink;
+        color:hotpink;
+    }
 </style>
 
 <body>
@@ -28,28 +32,27 @@
         <ul class="navbar-nav">
             <h3 class="text-left justify-content-start" style="margin-right: 550px ;"><span style="color:white">Share</span><span style="color:#36EEE0">Note</span></h3>
                 <li class="navbar-item">
-
-                    <a class="nav-link" style="margin-right: 50px;" href="{%url 'profile'%}">Home</a>
+                    <a class="nav-link" style="margin-right: 50px;font-weight: bold;" href="{%url 'profile'%}">Home</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link" style="margin-right: 50px;" href="{%url 'upload_notes'%}">Upload</a>
+                    <a class="nav-link" style="margin-right: 50px;font-weight: bold;" href="{%url 'upload_notes'%}">Upload</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link" style="margin-right: 50px;" href="{%url 'view_mynotes'%}">My&nbspNotes</a>
+                    <a class="nav-link" style="margin-right: 50px;font-weight: bold;" href="{%url 'view_mynotes'%}">My&nbspNotes</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link" style="margin-right: 50px;" href="{%url 'accepted_user'%}">All&nbspNotes</a>
+                    <a class="nav-link" style="margin-right: 50px;font-weight: bold;" href="{%url 'accepted_user'%}">All&nbspNotes</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link" style="margin-right: 50px;" href="{%url 'logout'%}">Log&nbspOut</a>
+                    <a class="nav-link" style="margin-right: 50px;font-weight: bold;" href="{%url 'logout'%}">Log&nbspOut</a>
                 </li>
                 <div class="btn-group text-center">
-                    <button type="button" class="btn dropdown-toggle" style="margin-right: 20px; background-color: #36EEE0;" data-toggle="dropdown">Welcome
+                    <button type="button" class="btn dropdown-toggle" style="margin-right: 20px; background-color: #36EEE0;font-weight: bold;" data-toggle="dropdown">Welcome
                         {{request.user.first_name}}</button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{%url 'profileinfo'%}">Profile</a>
-                            <a class="dropdown-item" href="{%url 'edit_profile'%}">Edit Profile</a>
-                            <a class="dropdown-item" href="{%url 'changepassword'%}">Change Password</a>
+                        <div class="dropdown-menu" style="background: #000;;">
+                            <a class="dropdown-item" style="background-color: black; color: #36EEE0; font-weight: bold;" href="{%url 'profileinfo'%}">Profile</a>
+                            <a class="dropdown-item" style="background-color: black; color: #36EEE0; font-weight: bold;" href="{%url 'edit_profile'%}">Edit Profile</a>
+                            <a class="dropdown-item" style="background-color: black; color: #36EEE0; font-weight: bold;" href="{%url 'changepassword'%}">Change Password</a>
                         </div>
         </ul>
     </nav>
