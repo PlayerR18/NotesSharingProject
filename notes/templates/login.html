@@ -45,7 +45,7 @@
             border: 3px solid #F652A0;
             -webkit-transition: 0.3s;
             transition: 0.3s;
-            opacity:0.5;
+            opacity: 0.5;;
           }
           
           input[type=password]:focus {
@@ -53,7 +53,7 @@
             border-color: #F652A0;
             opacity:1;
         }
-        ::placeholder {
+        .placeholder {
   color: #F652A0;
   opacity: 1; /* Firefox */
 }
@@ -84,7 +84,7 @@
             <input type="submit" class="btn  text-black mt-5"
             style="border-radius:7px; background-color: #36EEE0; margin-right: 30px; width:40%; font-weight:bold" value="Log in">
             <a href="{%url 'signup'%}" class="btn  text-black mt-5" style="border-radius:7px;  background-color: #F652A0; margin-left: 30px; width:40%; font-weight:bold" >Sign Up</a>
-            <a href="{%url 'login_admin'%}" class="btn text-black mt-5" style="border: 2px solid #33cec1;border-radius:7px; width:100%; font-weight:bold" ><span style="color:white">Login as an </span><span style="color:#33cec1 ">Administrator</span></a>
+            <a href="{%url 'login_admin'%}" class="btn text-black mt-4" style="border: 2px solid #33cec1;border-radius:7px; width:100%; font-weight:bold" ><span style="color:white">Login as an </span><span style="color:#33cec1 ">Administrator</span></a>
           </form>
     </div>
 </div>
