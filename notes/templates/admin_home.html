@@ -1,88 +1,158 @@
-{% extends 'admin_nav.html'%}
-{% block body %}
-{% load static %}
+{% extends 'admin_nav.html'%} {% block body %} {% load static %}
 <style>
-    .container1
-    {
-        background-image: linear-gradient(rgb(233, 208, 64),rgb(31, 31, 31));
-        border-radius: 10px;
-        opacity: 0.5;
+  .container1 {
+    background-color: #4c5270;
+    color: #bcece0;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  .container2 {
+    background-color: #356d4c;
+    color: #00ff6a;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  .container3 {
+    background-color: #69124a;
+    color: #f652a0;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  .container4 {
+    background-color: #14527c;
+    color: #36eee0;
+    border-radius: 10px;
+    opacity: 1;
+  }
+
+  .container1h:hover {
+    background-color: #bcece0;
+    color: #4c5270;
+    border-radius: 10px;
+    opacity: 1;
+    transition: 0.6s;
+  }
+  .container2h:hover {
+    background-color: #00ff6a;
+    color: #356d4c;
+    border-radius: 10px;
+    opacity: 1;
+    transition: 0.6s;
+  }
+  .container3h:hover {
+    background-color: #f652a0;
+    color: #69124a;
+    border-radius: 10px;
+    opacity: 1;
+    transition: 0.6s;
+  }
+  .container4h:hover {
+    background-color: #36eee0;
+    color: #14527c;
+    border-radius: 10px;
+    opacity: 1;
+    transition: 0.6s;
+  }
+  .mydiv:hover {
+    transform: translateY(-15px);
+    transition: 0.4s;
+  }
+  h1,
+  h2,
+  h4 {
+    padding: 25px;
+  }
+  @keyframes transitionIn {
+    from {
+      opacity: 0;
+      tranform: rotateX(-10deg);
     }
-    .container2
-    {
-        background-image: linear-gradient(rgb(5, 145, 0),rgb(31, 31, 31));
-        border-radius: 10px;
-        opacity: 0.5;
+    to {
+      opacity: 1;
+      tranform: rotateX(0);
     }
-    .container3
-    {
-        background-image: linear-gradient(rgb(255, 23, 23),rgb(31, 31, 31));
-        border-radius: 10px;
-        opacity: 0.5;
-    }
-    .container4
-    {
-        background-image: linear-gradient( rgb(20, 65, 216) , rgb(31, 31, 31));
-        border-radius: 10px;
-        opacity: 0.5;
-    }
-    
-    .containe1:hover
-    {
-        background-image: linear-gradient(rgb(9, 155, 148), rgb(31, 31, 31));
-        border-radius: 10px;
-        opacity: 1;
-        transition: 0.6s;
-    }
-    .mydiv:hover{
-        transform:translateY(-15px);
-        transition: 0.4s;
-    }
-    h1,h2,h4{padding:25px}
-        @keyframes transitionIn{
-            from{
-                opacity:0;
-                tranform: rotateX(-10deg);
-        
-            }
-            to{
-                opacity:1;
-                tranform: rotateX(0);
-            }
-        }
-        
-        </style>
-        <div style="animation: transitionIn 0.75s;">
-<br>
-<h1 class="text-white text-center"><span style="color:rgb(0, 255, 98); font-family:'Consolas'; font-weight:bold; font-size:70;">Welcome </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:50;">to </span><span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;">Share</span><span style="color:rgb(0, 255, 98); font-weight:bold; font-family:'Consolas'; font-size:70;">Note</span> <span style="color:rgb(255, 255, 255); font-family:'Consolas'; font-size:70;"> ,{{request.user.username}}!</span></h1>
-<br>
-<div class="container mt-5">
+  }
+</style>
+<div style="animation: transitionIn 0.75s">
+  <br />
+  <h1 class="text-white text-center">
+    <span
+      style="
+        color: #36eee0;
+        font-family: 'Consolas';
+        font-weight: bold;
+        font-size: 70;
+      "
+      >Welcome </span
+    ><span
+      style="color: rgb(255, 255, 255); font-family: 'Consolas'; font-size: 50"
+      >to </span
+    ><span
+      style="color: rgb(255, 255, 255); font-family: 'Consolas'; font-size: 70"
+      >Share</span
+    ><span
+      style="
+        color: #36eee0;
+        font-weight: bold;
+        font-family: 'Consolas';
+        font-size: 70;
+      "
+      >Note</span
+    >
+    <span
+      style="color: rgb(255, 255, 255); font-family: 'Consolas'; font-size: 70"
+    >
+      ,{{request.user.username}}!</span
+    >
+  </h1>
+  <br />
+  <div class="container mt-5">
     <div class="row">
-        <div class="col-sm-3 text-center mydiv">
-            <div class= "container1 containe1">
-                <h2 class="text-white">{{pn}}</h2>
-                <a href="{%url 'pending_notes'%}"><h4><span style="color:rgb(255, 255, 255)"> Pending</span><span style="color:rgb(51, 255, 0)"> Notes</h4></a>
-            </div>
-            </div>
-            <div class="col-sm-3 text-center mydiv">
-                <div class="container2 containe1">
-                    <h2 class="text-white">{{an}}</h2>
-                    <a href="{%url 'accepted_notes'%}"><h4><span style="color:rgb(255, 255, 255)">Accepted</span><span style="color:rgb(9, 255, 0)"> Notes</h4></a>
-                </div>
-                </div>
-                <div class="col-sm-3 text-center mydiv">
-                    <div class="container3 containe1">
-                        <h2 class="text-white">{{rn}}</h2>
-                        <a href="{%url 'rejected_notes'%}"><h4><span style="color:rgb(255, 255, 255)">Rejected</span><span style="color:rgb(10, 255, 1)"> Notes</h4></a>
-                    </div>
-                    </div>
-                    <div class="col-sm-3 text-center mydiv">
-                        <div class="container4 containe1">
-                            <h2 class="text-white">{{aln}}</h2>
-                            <a href="{%url 'all_notes'%}"><h4><span style="color:rgb(255, 255, 255)">All</span><span style="color:rgb(43, 255, 0)"> Notes</h4></a>
-                        </div>
-                        </div>>
-    </div>
-</div>
+      <div class="col-sm-3 text-center mydiv">
+        <div class="container1 container1h">
+          <h2 class="text">{{pn}}</h2>
+          <a href="{%url 'pending_notes'%}"
+            ><h4>
+              <span style="color: black"> Pending</span
+              ><span style="color: white">Notes</span>
+            </h4></a
+          >
         </div>
+      </div>
+      <div class="col-sm-3 text-center mydiv">
+        <div class="container2 container2h">
+          <h2 class="text">{{an}}</h2>
+          <a href="{%url 'accepted_notes'%}"
+            ><h4>
+              <span style="color: black">Accepted</span
+              ><span style="color: white">Notes</span>
+            </h4></a
+          >
+        </div>
+      </div>
+      <div class="col-sm-3 text-center mydiv">
+        <div class="container3 container3h">
+          <h2 class="text">{{rn}}</h2>
+          <a href="{%url 'rejected_notes'%}"
+            ><h4>
+              <span style="color: black">Rejected</span
+              ><span style="color: white">Notes</span>
+            </h4></a
+          >
+        </div>
+      </div>
+      <div class="col-sm-3 text-center mydiv">
+        <div class="container4 container4h">
+          <h2 class="text">{{aln}}</h2>
+          <a href="{%url 'all_notes'%}"
+            ><h4>
+              <span style="color: black">All</span
+              ><span style="color: white">Notes</span>
+            </h4>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
