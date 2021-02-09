@@ -77,10 +77,24 @@
           border: 4px solid #36eee0;
           opacity:1;
       }
-        </style>
-<div class="container mt-5 pt-8" style="background-image: linear-gradient(#4c5270,#4c5270); border-radius:10px;">
-    <h2 class=" text-center text-white">All Users</h2>
-    <HR style="background-color: hotpink">
+      @keyframes transitionIn{
+        from{
+            opacity:0;
+            tranform: rotateX(-10deg);
+    
+        }
+        to{
+            opacity:1;
+            tranform: rotateX(0);
+        }
+    }
+    
+    </style>
+    <div style="animation: transitionIn 0.75s;">
+<div class="container mt-5 pt-8" style="background-image: linear-gradient(#3777a1 , #3777a1); border-radius:10px;">
+  <br>
+  <h2 class="text-black text-center"><span style="font-family:'Consolas'; font-weight:bold">All</span><span style="color:#69124A; font-family:'Consolas'; font-weight:bold"> Users</span></h2>
+  <hr style="background-color: #69124A; border : 3px solid #69124A " >
         <table class="table table-striped table-hover table-dark" style="border-radius: 10px;"  id="example">
             <thead>
                 <tr>
@@ -113,5 +127,5 @@
 
     </div>
 </div>
-</div>      
+     
 {% endblock %}
