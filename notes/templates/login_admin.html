@@ -1,77 +1,102 @@
-
-{% extends 'navigation.html'%}
-{% load static %}
-{% block body %}
-
-{% ifequal error "no" %}
+{% extends 'navigation.html'%} {% load static %} {% block body %} {% ifequal error "no" %}
 <script>
-   alert('Logged in successfully');
-   window.location=("{% url 'admin_home' %}");
+  alert("Logged in successfully");
+  window.location = "{% url 'admin_home' %}";
 </script>
-{% endifequal %}
-{% ifequal error "yes" %} 
+{% endifequal %} {% ifequal error "yes" %}
 <script>
-   alert('Invalid Login Credentials, Try Again');
+  alert("Invalid Login Credentials, Try Again");
 </script>
 {% endifequal %}
 
-    <style>
-        input[type="text"] {
-          border: 3px solid #ccc;
-          -webkit-transition: 0.3s;
-          transition: 0.3s;
-          opacity:0.5;
-        }
+<style>
+  input[type="text"] {
+    border: 3px solid #ccc;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0.5;
+  }
 
-        input[type="text"]:focus {
-          border: 4px solid rgb(7, 221, 0);
-          opacity:1;
-        }
-          input[type="password"] {
-            border: 3px solid #ccc;
-            -webkit-transition: 0.3s;
-            transition: 0.3s;
-            opacity:0.5;
-          }
-          
-          input[type=password]:focus {
-            border: 4px solid rgb(7, 221, 0);
-            opacity:1;
-        }
-        
-          @keyframes transitionIn{
-              from{
-                  opacity:0;
-                  tranform: rotateX(-10deg);
-          
-              }
-              to{
-                  opacity:1;
-                  tranform: rotateX(0);
-              }
-          }
-          
-          </style>
-          <div style="animation: transitionIn 0.75s;">
-<div class="container ">
-<div class="row">
-<div class="col-sm-4">
-</div>
-    <div class="col-sm-4">
-    <br>
-    <h2 class=" text-white">Admin Login</h2>
-    <hr style="background-color:#F652A0">
+  input[type="text"]:focus {
+    border: 4px solid rgb(7, 221, 0);
+    opacity: 1;
+  }
+  input[type="password"] {
+    border: 3px solid #ccc;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0.5;
+  }
+
+  input[type="password"]:focus {
+    border: 4px solid rgb(7, 221, 0);
+    opacity: 1;
+  }
+
+  @keyframes transitionIn {
+    from {
+      opacity: 0;
+      tranform: rotateX(-10deg);
+    }
+    to {
+      opacity: 1;
+      tranform: rotateX(0);
+    }
+  }
+</style>
+<div style="animation: transitionIn 0.75s">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <br />
+        <h2 class="text-white">Admin Login</h2>
+        <hr style="background-color: #f652a0" />
         <form method="post">
-            {% csrf_token %}
-            <label class=" text-white">User Name</label>
-            <input type="text" class="form-control" style="border: 2px solid #33cec1; border-radius:7px;color:black" placeholder="Enter your Username" name="uname"><br>
-            <label class=" text-white" >Password</label>
-            <input type="password" class="form-control" style="border: 2px solid #33cec1;border-radius:7px" placeholder="Enter your Password" name="pwd">
-            <input type="submit" class="btn text-white mt-5" style="border: 2px solid #33cec1;border-radius:7px; margin-right: 30px;font-weight:bold; width:40%" value="Log in">
-            <a href="{%url 'login'%}" class="btn text-black mt-5" style="background-color: #F652A0; border-radius:7px; margin-left: 30px;font-weight:bold; width:40%" >Student Login</a>
-          </form>
+          {% csrf_token %}
+          <label class="text-white">User Name</label>
+          <input
+            type="text"
+            class="form-control bg-dark border-dark text-white"
+            style="border: 2px solid #33cec1; border-radius: 7px; color: black"
+            placeholder="Enter your Username"
+            name="uname"
+          /><br />
+          <label class="text-white">Password</label>
+          <input
+            type="password"
+            class="form-control bg-dark border-dark text-white"
+            style="border: 2px solid #33cec1; border-radius: 7px"
+            placeholder="Enter your Password"
+            name="pwd"
+          />
+          <input
+            type="submit"
+            class="btn text-white mt-5"
+            style="
+              border: 2px solid #33cec1;
+              border-radius: 7px;
+              margin-right: 30px;
+              font-weight: bold;
+              width: 40%;
+            "
+            value="Log in"
+          />
+          <a
+            href="{%url 'login'%}"
+            class="btn text-black mt-5"
+            style="
+              background-color: #f652a0;
+              border-radius: 7px;
+              margin-left: 30px;
+              font-weight: bold;
+              width: 40%;
+            "
+            >Student Login</a
+          >
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-          </div>
 {% endblock %}

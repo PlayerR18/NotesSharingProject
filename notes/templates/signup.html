@@ -3,6 +3,32 @@
 <div class="transparent">
   <div class="imag">
     <style>
+      input[type="radio"]:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid black;
+      }
+      input[type="radio"]:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #36eee0;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid black;
+      }
       input[type="text"] {
         border: 3px solid #ccc;
         -webkit-transition: 0.3s;
@@ -105,7 +131,7 @@
               <label class="text-white">First Name</label>
               <input
                 type="text"
-                class="form-control"
+                class="form-control bg-dark badge-dark text-white border-dark"
                 style="
                   border: 2px solid #33cec1;
                   border-radius: 7px;
@@ -117,7 +143,7 @@
               <label class="text-white">Last Name</label>
               <input
                 type="text"
-                class="form-control"
+                class="form-control bg-dark text-white badge-dark border-dark"
                 style="
                   border: 2px solid #33cec1;
                   border-radius: 7px;
@@ -129,7 +155,7 @@
               <label class="text-white">E-mail</label>
               <input
                 type="email"
-                class="form-control"
+                class="form-control bg-dark text-white badge-dark border-dark"
                 style="
                   border: 2px solid #33cec1;
                   border-radius: 7px;
@@ -141,7 +167,7 @@
               <label class="text-white">Password</label>
               <input
                 type="password"
-                class="form-control"
+                class="form-control bg-dark text-white badge-dark border-dark"
                 style="border: 2px solid #33cec1; border-radius: 7px"
                 placeholder="********"
                 name="password"
@@ -162,7 +188,7 @@
               <br />
               <label class="text-white">Branch?</label>
               <select
-                class="form-control"
+                class="form-control bg-dark text-white badge-dark border-dark"
                 style="border: 2px solid #33cec1; border-radius: 7px"
                 name="branch"
               >
@@ -182,6 +208,7 @@
                 id="male"
                 name="role"
                 value="Student"
+                style=""
               />
               <label
                 class="text-white"
