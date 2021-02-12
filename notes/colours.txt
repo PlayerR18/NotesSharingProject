@@ -26,3 +26,6 @@ my notes page:
     3. make table black
     4. MyNotes heading little space needed on top
     
+assign_status
+    1.input field color change needed
+
