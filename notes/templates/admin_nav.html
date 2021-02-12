@@ -34,7 +34,7 @@
   </style>
   <body>
     <nav
-      class="navbar navbar-expand-sm justify-content-end"
+      class="navbar navbar-expand-sm "
       style="background-color: rgb(0, 0, 0)"
     >
       <ul class="navbar-nav">
@@ -45,44 +45,37 @@
           <span style="color: white">Share</span
           ><span style="color: #36eee0">Note</span>
         </h3>
-        <li class="navbar-item">
+        <li class="navbar-item justify-content-end">
           <a
             class="nav-link"
-            style="margin-right: 50px"
+            style="margin-right: 50px; font-weight: bold"
             href="{%url 'admin_home'%}"
             >Home</a
           >
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            style="margin-right: 50px"
+        <li class="nav-item dropdown justify-content-end">
+          <a class="nav-link dropdown-toggle "
+            style="margin-right: 50px ; font-weight: bold"
             data-toggle="dropdown"
-            href="#"
-            >Notes</a
-          >
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="{%url 'pending_notes'%}">Pending</a>
-            <a class="dropdown-item" href="{%url 'accepted_notes'%}"
-              >Accepted</a
-            >
-            <a class="dropdown-item" href="{%url 'rejected_notes'%}"
-              >Rejected</a
-            >
-            <a class="dropdown-item" href="{%url 'all_notes'%}">All Notes</a>
+            href="#">Notes</a>
+          <div class="dropdown-menu" style="background-color: rgb(43, 43, 43);">
+            <a class="dropdown-item" style="background-color: rgb(43, 43, 43); color: #36EEE0; font-weight: bold;" onmouseout="this.style.color='#36EEE0';" onmouseover="this.style.color='hotpink';" href="{%url 'pending_notes'%}">Pending</a>
+            <a class="dropdown-item" style="background-color: rgb(43, 43, 43); color: #36EEE0; font-weight: bold;" onmouseout="this.style.color='#36EEE0';" onmouseover="this.style.color='hotpink';" href="{%url 'accepted_notes'%}">Accepted</a>
+            <a class="dropdown-item" style="background-color: rgb(43, 43, 43); color: #36EEE0; font-weight: bold;" onmouseout="this.style.color='#36EEE0';" onmouseover="this.style.color='hotpink';" href="{%url 'rejected_notes'%}">Rejected</a>
+            <a class="dropdown-item" style="background-color: rgb(43, 43, 43); color: #36EEE0; font-weight: bold;" onmouseout="this.style.color='#36EEE0';" onmouseover="this.style.color='hotpink';" href="{%url 'all_notes'%}">All Notes</a>
           </div>
         </li>
 
-        <li class="navbar-item">
+        <li class="navbar-item justify-content-end">
           <a
             class="nav-link"
-            style="margin-right: 50px"
+            style="margin-right: 50px; font-weight: bold"
             href="{%url 'view_users'%}"
             >Users</a
           >
         </li>
-        <li class="navbar-item">
-          <a class="nav-link" style="margin-right: 50px" href="{%url 'logout'%}"
+        <li class="navbar-item justify-content-end">
+          <a class="nav-link" style="margin-right: 50px; font-weight: bold" href="{%url 'logout'%}" onclick="return confirm('Are you sure you want to Log Out?')"
             >Log out</a
           >
         </li>
